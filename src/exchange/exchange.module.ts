@@ -3,7 +3,7 @@ import { Module } from '@nestjs/common';
 
 import { EXCHANGE_SERVICE } from './core';
 import { ExchangeController } from './exchange.controller';
-import { BinanceExchangeService } from './providers/binance-exchange.service';
+import { CoinbaseExchangeService } from './providers/coinbase-exchange.service';
 
 @Module({
   imports: [HttpModule],
@@ -11,7 +11,7 @@ import { BinanceExchangeService } from './providers/binance-exchange.service';
   providers: [
     {
       provide: EXCHANGE_SERVICE,
-      useClass: BinanceExchangeService,
+      useClass: CoinbaseExchangeService,
     },
   ],
 })
